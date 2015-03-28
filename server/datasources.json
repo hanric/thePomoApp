@@ -4,11 +4,11 @@
     "connector": "memory"
   },
   "mysqlDs": {
-    "name": "mysqlDs",
-    "connector": "mysql",
     "host": "us-cdbr-iron-east-02.cleardb.net",
     "database": "heroku_ac272f1df4f0188",
     "username": "b2e52544e1e62b",
-    "password": "871c36dd"
+    "password": "871c36dd",
+    "name": "mysqlDs",
+    "connector": "mysql"
   }
 }

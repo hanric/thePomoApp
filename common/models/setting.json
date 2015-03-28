@@ -1,0 +1,27 @@
+{
+  "name": "Setting",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "workTime": {
+      "type": "number",
+      "required": true
+    },
+    "restTime": {
+      "type": "number",
+      "required": true
+    },
+    "largeRestTime": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

@@ -8,7 +8,8 @@
     ]
   },
   "User": {
-    "dataSource": "mysqlDs"
+    "dataSource": "db",
+    "public": false
   },
   "AccessToken": {
     "dataSource": "db",
@@ -27,6 +28,22 @@
     "public": false
   },
   "Group": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Person": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Member": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Session": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Setting": {
     "dataSource": "mysqlDs",
     "public": true
   }

@@ -1,0 +1,41 @@
+{
+  "name": "Session",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "nPomos": {
+      "type": "number",
+      "required": true
+    },
+    "startTime": {
+      "type": "date",
+      "required": true
+    },
+    "endTime": {
+      "type": "date",
+      "required": true
+    },
+    "isStopped": {
+      "type": "boolean",
+      "required": true
+    },
+    "isFinished": {
+      "type": "boolean",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "setting": {
+      "type": "belongsTo",
+      "model": "Setting",
+      "foreignKey": "settingId"
+    }
+  },
+  "acls": [],
+  "methods": []
+}

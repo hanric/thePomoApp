@@ -12,7 +12,19 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "persons": {
+      "type": "hasMany",
+      "model": "Person",
+      "foreignKey": "personId",
+      "through": "Member"
+    },
+    "sessions": {
+      "type": "hasMany",
+      "model": "Session",
+      "foreignKey": "groupId"
+    }
+  },
   "acls": [],
   "methods": []
 }

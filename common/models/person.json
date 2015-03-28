@@ -1,0 +1,22 @@
+{
+  "name": "Person",
+  "base": "User",
+  "idInjection": true,
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "groups": {
+      "type": "hasMany",
+      "model": "Group",
+      "foreignKey": "groupId",
+      "through": "Member"
+    },
+    "settings": {
+      "type": "hasMany",
+      "model": "Setting",
+      "foreignKey": "personId"
+    }
+  },
+  "acls": [],
+  "methods": []
+}
