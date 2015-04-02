@@ -22,7 +22,7 @@ module.exports = function(app) {
 
 		// check if there is a Member with userId and groupId
 		context.model.findById(context.modelId, function(err, group) {
-			if (err || !project)
+			if (err || !group)
 				return reject();
 
 			var Member = app.models.Member;
@@ -61,7 +61,7 @@ module.exports = function(app) {
 
 		// check if there is a Member with userId and groupId and isAdmin = true
 		context.model.findById(context.modelId, function(err, group) {
-			if (err || !project)
+			if (err || !group)
 				return reject();
 
 			var Member = app.models.Member;
