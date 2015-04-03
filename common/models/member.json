@@ -1,16 +1,8 @@
 {
   "name": "Member",
   "base": "PersistedModel",
-  "properties": {
-    "isAdmin": {
-      "type": "boolean",
-      "required": true
-    },
-    "isConfirmed": {
-      "type": "boolean",
-      "required": true
-    }
-  },
+  "idInjection": true,
+  "properties": {},
   "validations": [],
   "relations": {
     "person": {

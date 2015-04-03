@@ -5,16 +5,16 @@
   "properties": {},
   "validations": [],
   "relations": {
-    "groups": {
-      "type": "hasMany",
-      "model": "Group",
-      "foreignKey": "groupId",
-      "through": "Member"
-    },
     "settings": {
       "type": "hasMany",
       "model": "Setting",
       "foreignKey": "personId"
+    },
+    "groups": {
+      "type": "hasMany",
+      "model": "Group",
+      "foreignKey": "personId",
+      "through": "Member"
     }
   },
   "acls": [
@@ -24,6 +24,27 @@
       "principalId": "$owner",
       "permission": "ALLOW",
       "property": "__create__groups"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "__get__groups"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "groupAdmin",
+      "permission": "ALLOW",
+      "property": "__updateById__groups"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "groupAdmin",
+      "permission": "ALLOW",
+      "property": "__destroyById__groups"
     }
   ],
   "methods": []

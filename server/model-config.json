@@ -35,15 +35,15 @@
     "dataSource": "mysqlDs",
     "public": true
   },
-  "Member": {
-    "dataSource": "mysqlDs",
-    "public": true
-  },
   "Session": {
     "dataSource": "mysqlDs",
     "public": true
   },
   "Setting": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Member": {
     "dataSource": "mysqlDs",
     "public": true
   }
