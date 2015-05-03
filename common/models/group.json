@@ -65,7 +65,7 @@
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
-      "principalId": "$owner",
+      "principalId": "groupMember",
       "permission": "ALLOW",
       "property": "__get__people"
     },
@@ -86,7 +86,7 @@
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
-      "principalId": "$owner",
+      "principalId": "groupMember",
       "permission": "ALLOW",
       "property": "__get__sessions"
     }

@@ -9,8 +9,7 @@ module.exports = function(app) {
 			});
 		}
 
-		// if the target model is not Group
-		if (context.modelName !== 'Session') {
+		if (context.modelName !== 'Session' && context.modelName !== 'Group') {
 			return reject();
 		}
 
@@ -21,29 +20,44 @@ module.exports = function(app) {
 		}
 
 		// check if the user is a member of the Group where the session belongs to
-		context.model.findById(context.modelId, function(err, session) {
-			if (err || !session)
-				return reject();
-
-			var Group = app.models.Group;
-			Group.findById(session.groupId, function(err, group) {
-				if (err || !group)
+		if (context.modelName == 'Session') {
+			context.model.findById(context.modelId, function(err, session) {
+				if (err || !session)
 					return reject();
 
-				var Member = app.models.Member;
-				Member.count({
-					personId: userId,
-					groupId: group.modelId
-				}, function(err,count) {
-					if (err) {
-						console.log(err);
-						return cb(null, false);
-					}
+				var Group = app.models.Group;
+				Group.findById(session.groupId, function(err, group) {
+					if (err || !group)
+						return reject();
 
-					cb(null, count > 0); // if count > 0, there is at least a Member that matches
+					var Member = app.models.Member;
+					Member.count({
+						personId: userId,
+						groupId: group.modelId
+					}, function(err,count) {
+						if (err) {
+							console.log(err);
+							return cb(null, false);
+						}
+
+						cb(null, count > 0); // if count > 0, there is at least a Member that matches
+					});
 				});
 			});
-		});
+		} else if (context.modelName == 'Group') {
+			var Member = app.models.Member;
+			Member.count({
+				personId: userId,
+				groupId: context.modelId
+			}, function(err,count) {
+				if (err) {
+					console.log(err);
+					return cb(null, false);
+				}
+
+				cb(null, count > 0); // if count > 0, there is at least a Member that matches
+			});
+		}
 	});
 
 	//groupAdmin
