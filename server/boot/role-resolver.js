@@ -68,7 +68,6 @@ module.exports = function(app) {
 			});
 		}
 
-		// TODO handel Session check
 		// if the target model is not Group or Session
 		if (context.modelName !== 'Group' && context.modelName !== 'Session') {
 			return reject();

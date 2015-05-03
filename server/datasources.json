@@ -9,6 +9,7 @@
     "username": "b2e52544e1e62b",
     "password": "871c36dd",
     "name": "mysqlDs",
-    "connector": "mysql"
+    "connector": "mysql",
+    "migrate": "safe"
   }
 }
