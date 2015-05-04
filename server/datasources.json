@@ -10,6 +10,6 @@
     "password": "871c36dd",
     "name": "mysqlDs",
     "connector": "mysql",
-    "migrate": "safe"
+    "connectionLimit": 10
   }
 }
