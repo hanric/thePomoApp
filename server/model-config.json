@@ -27,6 +27,22 @@
     "dataSource": "db",
     "public": false
   },
+  "application": {
+    "public": true,
+    "dataSource": "mysqlDs"
+  },
+  "installation": {
+    "public": true,
+    "dataSource": "mysqlDs"
+  },
+  "notification": {
+    "public": true,
+    "dataSource": "mysqlDs"
+  },
+  "push": {
+    "public": true,
+    "dataSource": "push"
+  },
   "Group": {
     "dataSource": "mysqlDs",
     "public": true
