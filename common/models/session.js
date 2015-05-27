@@ -61,13 +61,13 @@ module.exports = function(Session) {
 				//find the deviceIds of the users
 				var arrayDeviceTokens = [];
 				for (i = 0; i < deviceTokens.length; ++i) {
-					arrayDeviceIds.push(deviceTokens[i].deviceToken);
+					arrayDeviceTokens.push(deviceTokens[i].deviceToken);
 				}
-				console.log(arrayDeviceIds);
+				console.log(arrayDeviceTokens);
 
 				// Notify
 				// TODO check if a parse is necessary
-				PushModel.notifyMany('thePomoAppId', 'android', devicesTokens, note, function(err) {
+				PushModel.notifyMany('thePomoAppId', 'android', arrayDeviceTokens, note, function(err) {
 					console.log('pushing notification to %j', arrayDeviceTokens);
 				});
 			});
