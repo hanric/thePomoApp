@@ -28,7 +28,7 @@ module.exports = function(Group) {
 	var utils = require('../../server/utils');
 
 	Group.afterRemote('prototype.__link__people', function (ctx, member, next) {
-		var info;
+		var info = {};
 		info.userId = member.personId;
 		info.groupId = member.groupId;
 		info.groupName = ctx.instance.__data.name;

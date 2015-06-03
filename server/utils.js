@@ -75,7 +75,17 @@ module.exports = {
 		var PushModel = app.models.push;
 		var Installations = app.models.installation;
 
-		Installations.findByUser(info.userId, 'android', function(err, installations) {
+		var arrayMemberIds = [info.userId];
+
+		var devicesFilter = {
+			where: {
+				userId: {
+					inq: arrayMemberIds
+				}
+			}
+		};
+
+		Installations.find(devicesFilter, function(err, installations) {
 			if (err) {
 				console.log("err in Installation.find");
 			}
