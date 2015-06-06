@@ -1,5 +1,4 @@
 module.exports = function(Group) {
-	Group.disableRemoteMethod('find', true);
 	Group.disableRemoteMethod('__create__people', false);
 	Group.disableRemoteMethod('__delete__people', false);
 	Group.disableRemoteMethod('__destroyById__people', false);

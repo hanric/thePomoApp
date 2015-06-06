@@ -46,7 +46,7 @@
       "principalType": "ROLE",
       "principalId": "groupMember",
       "permission": "ALLOW",
-      "property": "findById"
+      "property": "findOne"
     },
     {
       "accessType": "EXECUTE",
