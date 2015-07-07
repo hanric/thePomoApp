@@ -42,8 +42,9 @@ module.exports = {
 				Groups.findById(session.groupId, function(err, group) {
 					groupName = group.name;
 					var message;
-					if (isNew) message = config.gcmSessionNew;
-					else message = config.gcmSessionUpdated;
+					if (kind == "new") message = config.gcmSessionNew;
+					else if (kind == "updated") message = config.gcmSessionUpdated;
+					else if (kind == "deleted") message = config.gcmSessionDeleted;
 					// Create the notification
 					var note = new Notification({
 						expirationInterval: 3600, // Expires 1 hour from now.
