@@ -14,8 +14,8 @@ module.exports = function(Session) {
 		next();
 	});
 
-	Session.afterRemote('delete', function(ctx, session, next) {
-		utils.notifySession(Session, session, "deleted");
+	Session.beforeRemote('deleteById', function(ctx, session, next) {
+		utils.notifyDeleteSession(Session, ctx.args.id);
 		next();
 	});
 };
