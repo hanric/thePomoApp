@@ -1,7 +1,7 @@
 var config = require('./config');
 
 module.exports = {
-	notifySession: function(Session, session, isNew) {
+	notifySession: function(Session, session, kind) {
 		var app = Session.app;
 		var Notification = app.models.notification;
 		var PushModel = app.models.push;
