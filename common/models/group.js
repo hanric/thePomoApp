@@ -1,4 +1,11 @@
 module.exports = function(Group) {
+	Group.disableRemoteMethod('exists', false);
+	Group.disableRemoteMethod('count', false);
+	Group.disableRemoteMethod('updateAll', false);
+	Group.disableRemoteMethod('resetPassword', false);
+	Group.disableRemoteMethod('findOne', false);
+	Group.disableRemoteMethod('confirm', false);
+
 	Group.disableRemoteMethod('__create__people', false);
 	Group.disableRemoteMethod('__delete__people', false);
 	Group.disableRemoteMethod('__destroyById__people', false);

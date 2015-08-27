@@ -1,6 +1,10 @@
 module.exports = function(Session) {
 
 	Session.disableRemoteMethod('find', true);
+	Session.disableRemoteMethod('exists', true);
+	Session.disableRemoteMethod('count', true);
+	Session.disableRemoteMethod('updateAll', true);
+	Session.disableRemoteMethod('findOne', true);
 
 	var utils = require('../../server/utils');
 

@@ -40,7 +40,7 @@
     "dataSource": "mysqlDs"
   },
   "push": {
-    "public": true,
+    "public": false,
     "dataSource": "push"
   },
   "Group": {
