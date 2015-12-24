@@ -70,14 +70,6 @@ module.exports = {
 		});
 	},
 
-	notifyDeleteSession: function(Session, sessionId) {
-		var app = Session.app;
-		var Sessions = app.models.Session;
-		Sessions.findById(sessionId, function(err, session) {
-			module.exports.notifySession(Session, session, "deleted");
-		});		
-	},
-
 	notifyGroupAdded: function(Group, info) {
 		var app = Group.app;
 		var Notification = app.models.notification;
