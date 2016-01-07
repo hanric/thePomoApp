@@ -26,4 +26,16 @@ module.exports = function(Person) {
 	Person.disableRemoteMethod('__findById__accessTokens', false);
 	Person.disableRemoteMethod('__destroyById__accessTokens', false);
 	Person.disableRemoteMethod('__count__accessTokens', false);
+
+	var config = require('../../server/config');
+
+	Person.afterRemote('prototype.__get__settings', function(ctx, settings, next) {
+		var app = Person.app;
+		var Settings = app.models.Setting;
+		Settings.findById(config.baseSettingId, function(err, setting) {
+			if (err) console.log(err);
+			ctx.result.push(setting);
+			next();
+		});
+	});
 };
